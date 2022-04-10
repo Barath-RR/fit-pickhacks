@@ -6,17 +6,17 @@
     <link rel="stylesheet" href="{% static 'car/card.css'%}">
     
   </head>
-  <body style="background-color: rgb(43, 40, 40);">
+  <body style="background-image: url({% static 'lbg1.jpg' %});">
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-between">
     
-      <a href="" class="logo"><img src="{% static "1.png" %}" alt=""
+      <a href="{% url 'landing' %}" class="logo"><img src="{% static "1.png" %}" alt="" style="width: 15%;"
         class="img-fluid"></a>
       <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto" href="#">About us</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'about' %}">About us</a></li>
               <li>{% if user.is_authenticated %}
-          <a href="{% url 'redirect' %}" class="nav-link"><button class="btn" style="color: orange;">{{ user }}<i class="fa fa-angle-right"></i></button></a>
+          <a href="" class="nav-link"><button class="btn" style="color: orange;">{{ user }}<i class="fa fa-angle-right"></i></button></a>
           {% else %}
           <a href="{% url 'login' %}" class="nav-link"><button class="btn" style="color: orange;">Login<i class="fa fa-angle-right"></i></button></a>
         {% endif %}</li>
@@ -27,14 +27,14 @@
     </div><!-- .navbar -->
     
       </header><br><br><br><br><br>
-      <h1 style="text-align: center;color: aliceblue;">Workouts</h1>
+      <h1 style="text-align: center;color: orange;">Cardio</h1>
     <div class="card-container">
     <div class="page-content">
       <div class="card">
         <div class="content">
           <h2 class="title">Abdomen stretch</h2>
           <p class="copy">With your hips flat on the ground, push your upper body upward, while looking straight ahead. This will stretch the abdominal muscles.</p>
-          <button class="btn">Go</button>
+          <a href="{% url 'cam' %}"><button class="btn">Go</button></a>
         </div>
       </div>
       <div class="card">
@@ -60,9 +60,10 @@
       </div>
       <div class="card">
         <div class="content">
+
           <h2 class="title">Meditation</h2>
           <p class="copy">For this pose, you kneel and then sit back on your legs to take the weight off your knees. Breathing and meditative exercises are often done in this position</p>
-          <button class="btn">Go</button>
+          <a href="{% url 'cam' %}"><button class="btn">Go</button></a>
         </div>
       </div>
       <div class="card">

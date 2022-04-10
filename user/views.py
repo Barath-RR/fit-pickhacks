@@ -27,7 +27,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             if user.user_type == "USER":
-                return redirect("/home")
+                return redirect("/")
             elif user.user_type == "SUPERUSER":
                 return redirect("/admin")
             else:

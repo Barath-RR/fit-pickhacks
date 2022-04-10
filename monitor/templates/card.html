@@ -7,35 +7,38 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'card/card.css'%}">
   </head>
-  <header id="header" class="fixed-top">
-		<div class="container d-flex align-items-center justify-content-between">
-	
-		<a href="" class="logo"><img src="{% static "1.png" %}" alt=""
-		  class="img-fluid"></a>
-	  <nav id="navbar" class="navbar">
-		<ul>
-      <li><a class="nav-link scrollto" href="#">About us</a></li>
-		  		  <li>{% if user.is_authenticated %}
-				<a href="{% url 'redirect' %}" class="nav-link"><button class="btn" style="color: orange;">{{ user }}<i class="fa fa-angle-right"></i></button></a>
-			  {% else %}
-			  <a href="{% url 'login' %}" class="nav-link"><button class="btn" style="color: orange;">Login<i class="fa fa-angle-right"></i></button></a>
-		  {% endif %}</li>
-		</ul>
-		<i class="bi bi-list mobile-nav-toggle"></i>
-	  </nav><!-- .navbar -->
-	
-	</div><!-- .navbar -->
-	
-	  </header>
-  <br><br><br><br><br><br><br><br><br><br>
-  <body style="background-color: rgb(43, 40, 40);">
+ 
+  <body  style="background-image: url({% static 'lbg1.jpg' %});">
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center justify-content-between">
+    
+      <a href="{% url 'landing' %}"" class="logo"><img src="{% static "1.png" %}" alt="" style="width: 15%;"
+        class="img-fluid"></a>
+      <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto" href="{% url 'about' %}">About us</a></li>
+              <li>{% if user.is_authenticated %}
+          <a href="" class="nav-link"><button class="btn" style="color: orange;">{{ user }}<i class="fa fa-angle-right"></i></button></a>
+          {% else %}
+          <a href="{% url 'login' %}" class="nav-link"><button class="btn" style="color: orange;">Login<i class="fa fa-angle-right"></i></button></a>
+        {% endif %}</li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    
+    </div><!-- .navbar -->
+    
+      </header>
+      
+    <br><br><br><br><br><br><br><br>
+    <h1 style="text-align: center;color: orange;">Workout Plans</h1>
     <div class="card-container">
     <div style="margin-left: 100px;" class="page-content">
       <div class="card" style="width: 300px;">
         <div class="content"><br><br><br>
-          <h2 class="title">Cardio</h2>
+          <h2 class="title" >Cardio</h2>
           <p class="copy">active streak-2🔥<br></p>
-          <button class="btn">Start</button>
+          <a href="{% url 'carde' %}"><button class="btn">Start</button></a>
         </div>
       </div>
       <div class="card" style="width: 300px;">

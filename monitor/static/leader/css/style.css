@@ -20,7 +20,7 @@ body {
 	transform: scale(1.05);
 }
 .leaderboard-card.leaderboard-card--first .leaderboard-card__top {
-	background: linear-gradient(45deg, #233474, #233474);
+	background: linear-gradient(45deg, #000d3b, #001561);
 	color: #fff;
 }
 .leaderboard-card__top {

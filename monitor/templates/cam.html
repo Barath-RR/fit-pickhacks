@@ -1,36 +1,33 @@
+{%load static%}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
- 
-<style>
-#videoElement {
-	width: 800px;
-	height: 675px;
-	background-color: #666;
-}
-</style>
+	<meta charset="UTF-8">
+	<title>Leaderboard</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'leader/css/style.css'%}">
 </head>
- 
-<body>
-<div id="container">
-	<video autoplay="true" id="videoElement">
+<body style="background-image: url({%static 'lbg1.jpg'%}); background-size: cover;">
+	<header id="header" class="fixed-top">
+		<div class="container d-flex align-items-center justify-content-between">
 	
-	</video>
-</div>
-<script>
-    var video = document.querySelector("#videoElement");
-
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (stream) {
-      video.srcObject = stream;
-    })
-    .catch(function (err0r) {
-      console.log("Something went wrong!");
-    });
-}
-
-</script>
+		<a href="{% url 'landing' %}"" class="logo"><img src="{% static "1.png" %}" alt="" style="width: 15%;"
+		  class="img-fluid"></a>
+	  <nav id="navbar" class="navbar">
+		<ul>
+			<li><a class="nav-link scrollto" href="{% url 'about' %}">About us</a></li>
+		  		  <li>{% if user.is_authenticated %}
+				<a href="" class="nav-link"><button class="btn" style="color: orange;">{{ user }}<i class="fa fa-angle-right"></i></button></a>
+			  {% else %}
+			  <a href="{% url 'login' %}" class="nav-link"><button class="btn" style="color: orange;">Login<i class="fa fa-angle-right"></i></button></a>
+		  {% endif %}</li>
+		</ul>
+		<i class="bi bi-list mobile-nav-toggle"></i>
+	  </nav><!-- .navbar -->
+	
+	</div><!-- .navbar -->
+</header>
 </body>
 </html>

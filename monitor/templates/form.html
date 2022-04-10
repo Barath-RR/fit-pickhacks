@@ -17,8 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static '1.css' %}">
    
-    <form method="post">
-    <section >
+    <form method="POST">
+    <section>
    
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -29,7 +29,7 @@
                   <div class="mb-md-5 mt-md-4 pb-5">
                     
       
-                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                    <h2 class="fw-bold mb-2 text-uppercase">Diet Planner</h2>
                     {% if messages %}
                     <div class="messages">
                         {% for message in messages %}
@@ -42,38 +42,40 @@
                     </div>
                 {% endif %}
                     {% csrf_token %}
-                    <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                    <p class="text-white-50 mb-5">Plan your Diet!</p>
       
                     <div class="form-outline form-white mb-4">
-                      <input type="email" id="typeEmailX" placeholder="email" class="form-control form-control-lg" name="login-email" />
+                      <input type="text" id="typeEmailX" placeholder="Age" class="form-control form-control-lg" name="age" />
                     </div>
-      
                     <div class="form-outline form-white mb-4">
-                      <input type="password" id="typePasswordX" placeholder="password"  name="login-password"  class="form-control form-control-lg" />
+                        <input type="text" id="typeEmailX" placeholder="Weight" class="form-control form-control-lg" name="weight" />
+                      </div>
+                    <div class="form-group">
+                        <select class="form-control form-control-lg"
+                                 id="sel1" name="dt" required>
+                            <option value="" selected hidden>Diet type</option>
+                            <option value="weight loss">Weight Loss</option>
+                            <option value="weight Gain">Weight Gain</option>
+                            <option value="Strengthneing">Strengthneing</option>
+                        </select>
+                    <div class="invalid-feedback">Please select a category.</div>
+
                     </div>
-      
-                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-      
-                    <input class="btn btn-outline-light btn-lg px-5" type="submit" value="Login" >
-      
-                    <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                      <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                      <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                      <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                    </div>
-      
-                  </div>
-      
-                  <div>
-                    <p class="mb-0">Don't have an account? <a href="{% url 'signup' %}" class="text-white-50 fw-bold">Sign Up</a>
-                    </p>
-                  </div>
-      
                 </div>
+              
+      
+      
+                    <a href="{% url 'diet' %}"><input class="btn btn-outline-light btn-lg px-5" type="submit" value="Submit" ></a>
+      
+                   
+      
+              </div>
               </div>
             </div>
           </div>
         </div>
+        </div>
+      
       </section>
     </form> 
 </body>

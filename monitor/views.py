@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import redirect, render
+from .models import dietm
 def monitor(request):
     return render(request, 'cam.html')
 def landing(request):
@@ -15,3 +15,17 @@ def card_eight(request):
 
 def diet(request):
     return render(request,"diet.html")
+
+def about(request):
+    return render(request,"aboutus.html")
+
+def form(request):
+    if request.method == "POST":
+        dietm.objects.create(
+            age=request.POST.get("age"),
+            weight=request.POST.get('weight'),
+            diet_type=request.POST.get('dt')
+        )
+        return redirect("/diet")
+        
+    return render(request,"form.html")
