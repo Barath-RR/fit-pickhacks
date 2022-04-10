@@ -1,0 +1,155 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'diet.css'%}">
+
+  </head>
+  <body style="background-color: rgb(210, 206, 206);">
+    <header id="header" class="fixed-top">
+		<div class="container d-flex align-items-center justify-content-between">
+	
+		<a href="" class="logo"><img src="{% static "1.png" %}" alt=""
+		  class="img-fluid"></a>
+	  <nav id="navbar" class="navbar">
+		<ul>
+      <li><a class="nav-link scrollto" href="#">About us</a></li>
+		  		  <li>{% if user.is_authenticated %}
+				<a href="{% url 'redirect' %}" class="nav-link"><button class="btn" style="color: orange;">{{ user }}<i class="fa fa-angle-right"></i></button></a>
+			  {% else %}
+			  <a href="{% url 'login' %}" class="nav-link"><button class="btn" style="color: orange;">Login<i class="fa fa-angle-right"></i></button></a>
+		  {% endif %}</li>
+		</ul>
+		<i class="bi bi-list mobile-nav-toggle"></i>
+	  </nav><!-- .navbar -->
+	
+	</div><!-- .navbar -->
+	
+	  </header>
+    <div class="container-fluid">
+        <div class="row" id="dca_app">
+            
+            <!--<section class="col-12" id="dca_header_bar">
+                <div class="row">
+                    <div class="col-4">
+                       <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="col-8 text-right">
+                     
+                    </div>
+                </div>
+            </section>-->
+    <br><Br><br><br>
+            <section class="col-12" id="dca_date_bar">
+                <br><br><Br><br>
+                <div>
+                    <ul class="row">
+                        <li>
+                            <span class="day">Thu</span>
+                            <span class="date">7</span>
+                        </li>
+                        <li>
+                            <span class="day">Fri</span>
+                            <span class="date">8</span>
+                        </li>
+                        <li>
+                            <span class="day">Sat</span>
+                            <span class="date">9</span>
+                        </li>
+                        <li class="active">
+                            <span class="day">Sun</span>
+                            <span class="date">10</span>
+                        </li>
+                        <li>
+                            <span class="day">Mon</span>
+                            <span class="date">11</span>
+                        </li>
+                        <li>
+                            <span class="day">Tue</span>
+                            <span class="date">12</span>
+                        </li>
+                        <li>
+                            <span class="day">Wed</span>
+                            <span class="date">13</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="col-12" id="dca_plan_tab">
+                <div class="row heading">
+                    <div class="col-8">
+                        <span>Plan</span>
+                    </div>
+                    <div class="col-4 text-right">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="row content c1">
+                    <div class="col-2">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="col-8">
+                        <span>Protein</span>
+                        <span>250 gms per day</span>
+                    </div>
+                    <div class="col-2">
+                        <span class="circle"></span>
+                    </div>
+                </div>
+                <div class="row content c2">
+                    <div class="col-2">
+                        <i class="fa fa-apple-alt"></i>
+                    </div>
+                    <div class="col-8">
+                        <span>Fruits</span>
+                        <span>350 grams per day</span>
+                    </div>
+                    <div class="col-2">
+                        <span class="circle"></span>
+                    </div>
+                </div>
+                <div class="row content c3">
+                    <div class="col-2">
+                        <i class="fa fa-basketball-ball"></i>
+                    </div>
+                    <div class="col-8">
+                        <span>carbohydrates</span>
+                        <span>300 gms per day</span>
+                    </div>
+                    <div class="col-2">
+                        <span class="circle"></span>
+                    </div>
+                </div>
+                <div class="row content c4">
+                    <div class="col-2">
+                        <i class="fa fa-glass"></i>
+                    </div>
+                    <div class="col-8">
+                        <span>water</span>
+                        <span>3 litres a day</span>
+                    </div>
+                    <div class="col-2">
+                        <span class="circle"></span>
+            
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

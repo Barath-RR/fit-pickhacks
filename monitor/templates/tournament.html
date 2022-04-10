@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+body {
+  background: #333;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 10px;
+  text-shadow: 3px 3px 5px black;
+}
+
+h2 span {
+  font-size: 60px;
+}
+
+p {
+  font-size: 20px;
+  text-shadow: 3px 3px 5px black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.container > div {
+  cursor: pointer;
+  height: 210px;
+  background-size: cover;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transition: all 0.5s ease-in;
+}
+
+.container > div:hover {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.container > div:nth-of-type(1) {
+  grid-column: 1 / 5;
+}
+
+.container > div:nth-of-type(2) {
+  grid-column: 1 / 5;
+}
+
+.container > div:nth-of-type(3) {
+  grid-column: 1 / 5;
+}
+
+.container > div:nth-of-type(4) {
+  grid-column: 1 / 5;
+}
+
+.bg1 {
+  background: url("{% static 'tourn/img/w7.jpg'%}");
+  color: rgb(251, 251, 251);
+}
+
+.bg2 {
+  background: url('https://i.ibb.co/Fb5jb3J/bg2.jpg');
+  color: rgb(10, 10, 10);
+
+
+}
+
+    </style>
+  </head>
+
+
+
+
+
+<title></title>
+
+<body>
+ 
+  <div class="navbar-end pr-2">
+    <div class="navbar-item">
+      <div class="buttons">
+        {% if user.is_authenticated %}
+        <a class="button is-primary" href="/logout/" >+</a>
+        {% else %}
+        <a class="button is-primary" href="/login/auth0">+</a>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+      <div class="bg1">
+        <a href="//" style="color: rgb(255, 255, 255)" ><h2>Fit India</h2></a>
+        <p style="font-size: small; float: right;">Total Number of Registration:25<br>Participants online:23</p>
+      </div>
+      <div class="bg1">
+        <a href="//" style="color: rgb(255, 255, 255)"><h2>Get Fit Online</h2></a>
+        <p style="font-size: small;">Total Number of Registration:25<br>Participants online:23</p>
+      </div>
+      <div class="bg1">
+        <a href="//" style="color: rgb(255, 255, 255)"><h2>Show off build</h2></a>
+        <p style="font-size: small;">Total Number of Registration:25<br>Participants online:23</p>
+      </div>
+     <div class="bg1">
+      <a href="//" style="color: rgb(255, 255, 255)"><h2>Weight loss contest</h2></a>
+      <p style="font-size: small;">Total Number of Registration:25<br>Participants online:23</p>
+      </div>
+    </div>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js'%}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js'%}"></script>
+    <script src="{% static 'vendor/waypoints/noframework.waypoints.js'%}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js'%}"></script>
+   </body>
+</html>
